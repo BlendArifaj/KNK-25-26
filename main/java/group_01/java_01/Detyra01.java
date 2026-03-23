@@ -47,6 +47,7 @@ public class Detyra01 extends Application {
         polygon.setStroke(Color.GRAY);
         polygon.setStrokeWidth(3);
 
+
         Polyline polyline = new Polyline(0,0, 100, 100, 150, 100, 200, 200, 80, 90);
         polyline.setFill(null);
         polyline.setStroke(Color.BROWN);
