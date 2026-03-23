@@ -18,7 +18,11 @@ module com.example.knk2526 {
     exports group_04.java_01;
 
     // Java 02
-    opens  group_01.java_02 to javafx.fxml;
+    opens group_01.java_02 to javafx.fxml;
+    opens group_02.java_02 to javafx.fxml;
+    opens group_03.java_02 to javafx.fxml;
 
     exports group_01.java_02;
+    exports group_02.java_02;
+    exports group_03.java_02;
 }
