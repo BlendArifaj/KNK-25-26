@@ -31,6 +31,7 @@ public class Detyra01 extends Application {
 //            270 - 315 (i = 3) 3 * 2 * 45 = 270
             int angle = 360 / (2 * n);
             Arc arc = new Arc(100, 100, 100, 100, i * 2 * angle, angle);
+
             arc.setType(ArcType.ROUND);
             group.getChildren().addAll(arc);
         }
