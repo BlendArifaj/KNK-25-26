@@ -1,7 +1,6 @@
-package models;
+package group_03.models;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class Student {
     private int id;
@@ -14,20 +13,32 @@ public class Student {
         this.age = age;
     }
 
-    public static Student getFromResultSet(ResultSet res) throws SQLException {
-        int id = res.getInt("id");
-        String name = res.getString("name");
-        int age = res.getInt("age");
+    public static Student getFromResultSet(ResultSet res){
+        try{
+            int id = res.getInt("id");
+            String name = res.getString("name");
+            int age = res.getInt("age");
 
-        return new Student(id, name, age);
+            return new Student(id, name, age);
+        }catch (Exception e){
+            return null;
+        }
     }
 
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
@@ -36,9 +47,5 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

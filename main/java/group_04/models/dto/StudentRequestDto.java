@@ -1,10 +1,10 @@
-package models.dto;
+package group_04.models.dto;
 
-public class CreateStudentDto {
+public class StudentRequestDto implements IRequestDto{
     private String name;
     private int age;
 
-    public CreateStudentDto(String name, int age) {
+    public StudentRequestDto(String name, int age) {
         this.name = name;
         this.age = age;
     }

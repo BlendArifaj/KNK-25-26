@@ -1,28 +1,45 @@
 package repository;
 
 import models.Student;
-import models.dto.CreateStudentDto;
-import models.dto.UpdateStudentDto;
+import models.mappers.Mapper;
+import models.mappers.StudentMapper;
+import services.DatabaseService;
 
-public class StudentRepository {
+import java.sql.*;
+
+public class StudentRepository extends BaseRepository<Student> {
 //    select, create, update, delete
-//    public Student getById(int id){
-//
-//    }
-//
-//    public Student create(CreateStudentDto studentDto){
-//
-//    }
-//
-//    public Student update(UpdateStudentDto studentDto){
-//
-//    }
-//
-//    public boolean delete(int studentId){
-//
-//    }
+    @Override
+    String tableName() {
+        return "student";
+    }
 
-//    public boolean delete(Student student){
-//        return delete(student.getId());
-//    }
+    @Override
+    Mapper<Student> getMapper() {
+        return new StudentMapper();
+    }
+
+    public String getInsertQuery(){
+        return  "INSERT INTO student (name, age) VALUES (?, ?)";
+    }
+
+    public String getUpdateQuery(){
+        return "UPDATE student SET name = ? and age = ? WHERE id = ?";
+    }
+
+    public void setPstmCreate(PreparedStatement pstm, Student student) throws SQLException {
+        pstm.setString(1, student.getName());
+        pstm.setInt(2, student.getAge());
+    }
+
+    public void setPstmUpdate(PreparedStatement pstm, Student student) throws SQLException {
+        pstm.setString(1, student.getName());
+        pstm.setInt(2, student.getAge());
+        pstm.setInt(3, student.getId());
+
+    }
+
+    public boolean delete(Student student){
+        return delete(student.getId());
+    }
 }

@@ -29,7 +29,11 @@ module com.example.knk2526 {
     // Java 03
     opens group_01.java_03 to javafx.fxml;
     opens group_02.java_03 to javafx.fxml;
+    opens group_03.java_03 to javafx.fxml;
+    opens group_04.java_03 to javafx.fxml;
 
     exports group_01.java_03;
     exports group_02.java_03;
+    exports group_03.java_03;
+    exports group_04.java_03;
 }
