@@ -3,6 +3,7 @@ package models.mappers;
 import models.Student;
 import models.dto.IRequestDto;
 import models.dto.StudentRequestDto;
+import models.dto.StudentResponseDto;
 import models.mappers.Mapper;
 
 import java.sql.ResultSet;
@@ -37,4 +38,5 @@ public class StudentMapper implements Mapper<Student> {
         student.setAge(sDto.getAge());
         return student;
     }
+
 }

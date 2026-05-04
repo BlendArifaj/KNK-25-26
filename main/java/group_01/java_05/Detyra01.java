@@ -1,7 +1,7 @@
 package group_01.java_05;
 
 import models.Student;
-import models.mappers.ResultSetMapper;
+import models.mappers.Mapper;
 import models.mappers.StudentMapper;
 import services.DatabaseService;
 
@@ -30,7 +30,7 @@ public class Detyra01 {
 //            pstm.setString(2, "Test");
 //            pstm.setBoolean(3, true);
             ResultSet res = pstm.executeQuery();
-            ResultSetMapper<Student> studentMapper = new StudentMapper();
+            Mapper<Student> studentMapper = new StudentMapper();
             while(res.next()){
                 Student std = studentMapper.getFromResultSet(res);
 

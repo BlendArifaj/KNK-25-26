@@ -7,7 +7,7 @@ import group_04.models.dto.StudentRequestDto;
 import java.sql.ResultSet;
 
 
-// SceneBuilder
+
 public class StudentMapper implements IMapper<Student> {
     @Override
     public Student fromResultSet(ResultSet res) {
