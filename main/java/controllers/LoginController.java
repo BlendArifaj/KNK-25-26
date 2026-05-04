@@ -27,6 +27,9 @@ public class LoginController {
 
         LoginResponseDto response = this.authService.login(loginDto);
 
+        if(response.isLogin()){
+
+        }
 //        logic ...
     }
 

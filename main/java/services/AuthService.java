@@ -3,7 +3,6 @@ package services;
 import models.User;
 import models.dto.LoginRequestDto;
 import models.dto.LoginResponseDto;
-import repository.IRepository;
 import repository.UserRepository;
 
 public class AuthService {
@@ -18,13 +17,13 @@ public class AuthService {
 
         User user = this.userRepository.getByUsername(loginRequest.getUsername());
 
-        // user: password
-        // db: salt, saltedHash
-
         if(user == null){
             return new LoginResponseDto(false, "Username or Password is not correct!");
         }
 
+        if(!HashService.validatePassword(loginRequest.getPassword(), user.getSalt(), user.getSaltedHash())){
+            return new LoginResponseDto(false, "Username or Password is not correct!");
+        }
 
         return new LoginResponseDto(true);
 
