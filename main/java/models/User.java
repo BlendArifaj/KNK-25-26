@@ -7,6 +7,7 @@ public class User {
     private String username;
     private String salt;
     private String saltedHash;
+    private String role;
 
     public User(int id, String username, String salt, String saltedHash) {
         this.id = id;

@@ -1,9 +1,14 @@
 package services;
 
+import models.User;
 import models.dto.SignupRequestDto;
 import models.dto.SignupResponseDto;
+import models.mappers.UserMapper;
+import repository.UserRepository;
 
 public class SignupService {
+    private final UserRepository userRepository = new UserRepository();
+    private final UserMapper userMapper = new UserMapper();
 
     public SignupResponseDto save(SignupRequestDto signUpRequest){
 //        Validimi i fushave
@@ -11,8 +16,20 @@ public class SignupService {
             this.validate(signUpRequest);
 
             this.validateUsername(signUpRequest.getUsername());
-        }catch (Exception e){
 
+            String salt = HashService.generateSalt();
+            String saltedPassword = HashService.generateHash(signUpRequest.getPassword(), salt);
+
+            User user = userMapper.fromSignUpDto(signUpRequest, salt, saltedPassword);
+            User createdUser = this.userRepository.create(user);
+
+            if(createdUser == null){
+                throw new Exception("User is not created successfully!");
+            }
+
+            return new SignupResponseDto(true);
+        }catch (Exception e){
+            return new SignupResponseDto(false, e.getMessage());
         }
     }
 
@@ -35,6 +52,9 @@ public class SignupService {
     }
 
     private void validateUsername(String username) throws Exception{
-
+        User user = this.userRepository.getByUsername(username);
+        if(user != null){
+            throw new Exception("User with username='" + username +"' already exists!");
+        }
     }
 }

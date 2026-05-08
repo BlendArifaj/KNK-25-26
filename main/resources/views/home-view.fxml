@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.doctorappointment.HomeController"
+            prefWidth="1000"
+            prefHeight="650"
+            style="-fx-background-color: #f4f8fb;">
+
+    <!-- Top Navbar -->
+    <top>
+        <HBox spacing="20"
+              alignment="CENTER_LEFT"
+              style="-fx-background-color: #1976d2;"
+              prefHeight="70">
+            <padding>
+                <Insets top="0" right="30" bottom="0" left="30"/>
+            </padding>
+
+            <Label text="Doctor Appointment"
+                   textFill="white">
+                <font>
+                    <Font size="24"/>
+                </font>
+            </Label>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Home" style="-fx-background-color: white; -fx-text-fill: #1976d2;"/>
+            <Button text="Doctors" style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="Appointments" style="-fx-background-color: transparent; -fx-text-fill: white;"/>
+            <Button text="Login" style="-fx-background-color: white; -fx-text-fill: #1976d2;"/>
+        </HBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="30" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="50" right="50" bottom="50" left="50"/>
+            </padding>
+
+            <!-- Hero Section -->
+            <VBox spacing="15" alignment="CENTER">
+                <Label text="Book Your Doctor Appointment Easily">
+                    <font>
+                        <Font size="34"/>
+                    </font>
+                </Label>
+
+                <Label text="Find trusted doctors, check availability, and book appointments in minutes."
+                       style="-fx-text-fill: #555555;">
+                    <font>
+                        <Font size="16"/>
+                    </font>
+                </Label>
+
+                <Button text="Book Appointment"
+                        fx:id="bookAppointmentButton"
+                        prefWidth="200"
+                        prefHeight="45"
+                        style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 8;">
+                    <font>
+                        <Font size="15"/>
+                    </font>
+                </Button>
+            </VBox>
+
+            <!-- Cards Section -->
+            <HBox spacing="25" alignment="CENTER">
+
+                <VBox spacing="12"
+                      alignment="CENTER"
+                      prefWidth="250"
+                      prefHeight="160"
+                      style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                    <Label text="👨‍⚕️">
+                        <font>
+                            <Font size="36"/>
+                        </font>
+                    </Label>
+                    <Label text="Find Doctors">
+                        <font>
+                            <Font size="20"/>
+                        </font>
+                    </Label>
+                    <Label text="Search by specialty and location"
+                           style="-fx-text-fill: #666666;"/>
+                </VBox>
+
+                <VBox spacing="12"
+                      alignment="CENTER"
+                      prefWidth="250"
+                      prefHeight="160"
+                      style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                    <Label text="📅">
+                        <font>
+                            <Font size="36"/>
+                        </font>
+                    </Label>
+                    <Label text="Easy Booking">
+                        <font>
+                            <Font size="20"/>
+                        </font>
+                    </Label>
+                    <Label text="Choose date and time instantly"
+                           style="-fx-text-fill: #666666;"/>
+                </VBox>
+
+                <VBox spacing="12"
+                      alignment="CENTER"
+                      prefWidth="250"
+                      prefHeight="160"
+                      style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                    <Label text="✅">
+                        <font>
+                            <Font size="36"/>
+                        </font>
+                    </Label>
+                    <Label text="Manage Visits">
+                        <font>
+                            <Font size="20"/>
+                        </font>
+                    </Label>
+                    <Label text="View or cancel appointments"
+                           style="-fx-text-fill: #666666;"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- Search Box -->
+            <VBox spacing="15"
+                  alignment="CENTER"
+                  prefWidth="700"
+                  style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0, 0, 3);">
+
+                <Label text="Search for a Doctor">
+                    <font>
+                        <Font size="22"/>
+                    </font>
+                </Label>
+
+                <HBox spacing="12" alignment="CENTER">
+                    <TextField fx:id="searchDoctorField"
+                               promptText="Enter doctor name or specialty"
+                               prefWidth="350"
+                               prefHeight="40"/>
+
+                    <ComboBox fx:id="specialtyComboBox"
+                              promptText="Specialty"
+                              prefWidth="180"
+                              prefHeight="40"/>
+
+                    <Button text="Search"
+                            fx:id="searchButton"
+                            prefWidth="100"
+                            prefHeight="40"
+                            style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 6;"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER"
+              prefHeight="45"
+              style="-fx-background-color: #e3f2fd;">
+            <Label text="© 2026 Doctor Appointment System"
+                   style="-fx-text-fill: #555555;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

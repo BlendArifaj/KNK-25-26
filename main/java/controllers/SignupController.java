@@ -1,11 +1,16 @@
 package controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import models.dto.SignupRequestDto;
+import models.dto.SignupResponseDto;
+import services.SignupService;
 
 public class SignupController {
+    private final SignupService signUpService = new SignupService();
+
     @FXML
     private TextField fullNameField;
 
@@ -22,9 +27,21 @@ public class SignupController {
     private PasswordField confirmPasswordField;
 
     @FXML
+    private Label messageLabel;
+
+    @FXML
     private void handleSignup(){
 //        ME kriju DTO-objektin me te dhenat nga View
         SignupRequestDto request = this.createRequestDto();
+
+        SignupResponseDto response = this.signUpService.save(request);
+
+//        logic ...
+        if(!response.isCreated()){
+            this.messageLabel.setText(response.getMessage());
+        }
+
+//        route to login
 
     }
 
