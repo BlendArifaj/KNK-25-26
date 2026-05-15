@@ -38,7 +38,8 @@ public class UserMapper implements Mapper<User> {
                 signUpDto.getEmail(),
                 signUpDto.getUsername(),
                 salt,
-                saltedHash
+                saltedHash,
+                "pin"
         );
     }
 }

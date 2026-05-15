@@ -5,7 +5,7 @@ import models.dto.LoginRequestDto;
 import models.dto.LoginResponseDto;
 import repository.UserRepository;
 
-public class AuthService {
+public class LoginService {
 
     private final UserRepository userRepository = new UserRepository();
 

@@ -7,7 +7,7 @@ public class User {
     private String username;
     private String salt;
     private String saltedHash;
-    private String role;
+    private String securityPin;
 
     public User(int id, String username, String salt, String saltedHash) {
         this.id = id;
@@ -16,13 +16,17 @@ public class User {
         this.saltedHash = saltedHash;
     }
 
-    public User(int id, String fullName, String email, String username, String salt, String saltedHash) {
+    public User(
+            int id, String fullName, String email, String username,
+            String salt, String saltedHash, String securityPin
+    ) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.username = username;
         this.salt = salt;
         this.saltedHash = saltedHash;
+        this.securityPin = securityPin;
     }
 
     public String getEmail() {
@@ -67,5 +71,13 @@ public class User {
 
     public void setSaltedHash(String saltedHash) {
         this.saltedHash = saltedHash;
+    }
+
+    public String getSecurityPin() {
+        return securityPin;
+    }
+
+    public void setSecurityPin(String securityPin) {
+        this.securityPin = securityPin;
     }
 }

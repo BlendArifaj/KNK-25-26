@@ -1,166 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.doctorappointment.HomeController"
-            prefWidth="1000"
-            prefHeight="650"
-            style="-fx-background-color: #f4f8fb;">
+<BorderPane prefHeight="650" prefWidth="1000" style="-fx-background-color: #f4f8fb;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
 
     <!-- Top Navbar -->
     <top>
-        <HBox spacing="20"
-              alignment="CENTER_LEFT"
-              style="-fx-background-color: #1976d2;"
-              prefHeight="70">
+        <HBox alignment="CENTER_LEFT" prefHeight="70" spacing="20" style="-fx-background-color: #1976d2;">
             <padding>
-                <Insets top="0" right="30" bottom="0" left="30"/>
+                <Insets bottom="0" left="30" right="30" top="0" />
             </padding>
 
-            <Label text="Doctor Appointment"
-                   textFill="white">
+            <Label text="Doctor Appointment" textFill="white">
                 <font>
-                    <Font size="24"/>
+                    <Font size="24" />
                 </font>
             </Label>
 
-            <Region HBox.hgrow="ALWAYS"/>
+            <Region HBox.hgrow="ALWAYS" />
 
-            <Button text="Home" style="-fx-background-color: white; -fx-text-fill: #1976d2;"/>
-            <Button text="Doctors" style="-fx-background-color: transparent; -fx-text-fill: white;"/>
-            <Button text="Appointments" style="-fx-background-color: transparent; -fx-text-fill: white;"/>
-            <Button text="Login" style="-fx-background-color: white; -fx-text-fill: #1976d2;"/>
+            <Button style="-fx-background-color: white; -fx-text-fill: #1976d2;" text="Home" />
+            <Button onAction="#handleDoctorsClick" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Doctors" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Appointments" />
+            <Button style="-fx-background-color: white; -fx-text-fill: #1976d2;" text="Login" />
         </HBox>
     </top>
 
     <!-- Main Content -->
     <center>
-        <VBox spacing="30" alignment="TOP_CENTER">
+        <VBox fx:id="contentPane" alignment="TOP_CENTER" spacing="30">
             <padding>
-                <Insets top="50" right="50" bottom="50" left="50"/>
+                <Insets bottom="50" left="50" right="50" top="50" />
             </padding>
 
             <!-- Hero Section -->
-            <VBox spacing="15" alignment="CENTER">
+            <VBox alignment="CENTER" spacing="15">
                 <Label text="Book Your Doctor Appointment Easily">
                     <font>
-                        <Font size="34"/>
+                        <Font size="34" />
                     </font>
                 </Label>
 
-                <Label text="Find trusted doctors, check availability, and book appointments in minutes."
-                       style="-fx-text-fill: #555555;">
+                <Label style="-fx-text-fill: #555555;" text="Find trusted doctors, check availability, and book appointments in minutes.">
                     <font>
-                        <Font size="16"/>
+                        <Font size="16" />
                     </font>
                 </Label>
 
-                <Button text="Book Appointment"
-                        fx:id="bookAppointmentButton"
-                        prefWidth="200"
-                        prefHeight="45"
-                        style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 8;">
+                <Button fx:id="bookAppointmentButton" prefHeight="45" prefWidth="200" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 8;" text="Book Appointment">
                     <font>
-                        <Font size="15"/>
+                        <Font size="15" />
                     </font>
                 </Button>
             </VBox>
 
             <!-- Cards Section -->
-            <HBox spacing="25" alignment="CENTER">
+            <HBox alignment="CENTER" spacing="25">
 
-                <VBox spacing="12"
-                      alignment="CENTER"
-                      prefWidth="250"
-                      prefHeight="160"
-                      style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                <VBox alignment="CENTER" prefHeight="160" prefWidth="250" spacing="12" style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
                     <Label text="👨‍⚕️">
                         <font>
-                            <Font size="36"/>
+                            <Font size="36" />
                         </font>
                     </Label>
                     <Label text="Find Doctors">
                         <font>
-                            <Font size="20"/>
+                            <Font size="20" />
                         </font>
                     </Label>
-                    <Label text="Search by specialty and location"
-                           style="-fx-text-fill: #666666;"/>
+                    <Label style="-fx-text-fill: #666666;" text="Search by specialty and location" />
                 </VBox>
 
-                <VBox spacing="12"
-                      alignment="CENTER"
-                      prefWidth="250"
-                      prefHeight="160"
-                      style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                <VBox alignment="CENTER" prefHeight="160" prefWidth="250" spacing="12" style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
                     <Label text="📅">
                         <font>
-                            <Font size="36"/>
+                            <Font size="36" />
                         </font>
                     </Label>
                     <Label text="Easy Booking">
                         <font>
-                            <Font size="20"/>
+                            <Font size="20" />
                         </font>
                     </Label>
-                    <Label text="Choose date and time instantly"
-                           style="-fx-text-fill: #666666;"/>
+                    <Label style="-fx-text-fill: #666666;" text="Choose date and time instantly" />
                 </VBox>
 
-                <VBox spacing="12"
-                      alignment="CENTER"
-                      prefWidth="250"
-                      prefHeight="160"
-                      style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                <VBox alignment="CENTER" prefHeight="160" prefWidth="250" spacing="12" style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);">
                     <Label text="✅">
                         <font>
-                            <Font size="36"/>
+                            <Font size="36" />
                         </font>
                     </Label>
                     <Label text="Manage Visits">
                         <font>
-                            <Font size="20"/>
+                            <Font size="20" />
                         </font>
                     </Label>
-                    <Label text="View or cancel appointments"
-                           style="-fx-text-fill: #666666;"/>
+                    <Label style="-fx-text-fill: #666666;" text="View or cancel appointments" />
                 </VBox>
 
             </HBox>
 
             <!-- Search Box -->
-            <VBox spacing="15"
-                  alignment="CENTER"
-                  prefWidth="700"
-                  style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0, 0, 3);">
+            <VBox alignment="CENTER" prefWidth="700" spacing="15" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0, 0, 3);">
 
                 <Label text="Search for a Doctor">
                     <font>
-                        <Font size="22"/>
+                        <Font size="22" />
                     </font>
                 </Label>
 
-                <HBox spacing="12" alignment="CENTER">
-                    <TextField fx:id="searchDoctorField"
-                               promptText="Enter doctor name or specialty"
-                               prefWidth="350"
-                               prefHeight="40"/>
+                <HBox alignment="CENTER" spacing="12">
+                    <TextField fx:id="searchDoctorField" prefHeight="40" prefWidth="350" promptText="Enter doctor name or specialty" />
 
-                    <ComboBox fx:id="specialtyComboBox"
-                              promptText="Specialty"
-                              prefWidth="180"
-                              prefHeight="40"/>
+                    <ComboBox fx:id="specialtyComboBox" prefHeight="40" prefWidth="180" promptText="Specialty" />
 
-                    <Button text="Search"
-                            fx:id="searchButton"
-                            prefWidth="100"
-                            prefHeight="40"
-                            style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 6;"/>
+                    <Button fx:id="searchButton" prefHeight="40" prefWidth="100" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 6;" text="Search" />
                 </HBox>
             </VBox>
 
@@ -169,11 +127,8 @@
 
     <!-- Footer -->
     <bottom>
-        <HBox alignment="CENTER"
-              prefHeight="45"
-              style="-fx-background-color: #e3f2fd;">
-            <Label text="© 2026 Doctor Appointment System"
-                   style="-fx-text-fill: #555555;"/>
+        <HBox alignment="CENTER" prefHeight="45" style="-fx-background-color: #e3f2fd;">
+            <Label style="-fx-text-fill: #555555;" text="© 2026 Doctor Appointment System" />
         </HBox>
     </bottom>
 

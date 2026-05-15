@@ -31,7 +31,6 @@ public class SignupController {
 
     @FXML
     private void handleSignup(){
-//        ME kriju DTO-objektin me te dhenat nga View
         SignupRequestDto request = this.createRequestDto();
 
         SignupResponseDto response = this.signUpService.save(request);

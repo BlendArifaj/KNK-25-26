@@ -36,4 +36,13 @@ module com.example.knk2526 {
     exports group_02.java_03;
     exports group_03.java_03;
     exports group_04.java_03;
+
+    opens app to javafx.fxml;
+    opens controllers to javafx.fxml;
+
+    exports app;
+    exports controllers;
+    exports models;
+    exports services;
+    exports repository;
 }
