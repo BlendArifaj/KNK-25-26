@@ -6,6 +6,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Router {
 
@@ -19,8 +21,10 @@ public class Router {
 
     private static Pane loadPane(String viewPath) {
         try {
+
             FXMLLoader loader = new FXMLLoader(
-                    Router.class.getResource(viewPath)
+                    Router.class.getResource(viewPath),
+                    I18n.getResourceBundle()
             );
 
             return loader.load();
