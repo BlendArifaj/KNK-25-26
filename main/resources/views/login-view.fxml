@@ -54,7 +54,7 @@
                        -fx-font-size: 15px;
                        -fx-font-weight: bold;
                        -fx-background-radius: 6;"
-                text="Login" />
+                text="%login.login_btn" />
 
         <Hyperlink fx:id="forgotPasswordLink"
                    onAction="#handleForgotPassword"

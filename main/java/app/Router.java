@@ -10,7 +10,6 @@ import java.io.IOException;
 public class Router {
 
     private static Stage stage;
-    private static Runnable refreshAction;
 
     private Router() {}
 
@@ -35,21 +34,13 @@ public class Router {
         Pane pane = loadPane(view.value());
 
         stage.setScene(new Scene(pane));
-
-        refreshAction = () -> navigateTo(view);
     }
 
     public static void navigateContentTo(ViewEnum view, Pane content) {
         Pane pane = loadPane(view.value());
 
         content.getChildren().setAll(pane);
-
-        refreshAction = () -> navigateContentTo(view, content);
     }
 
-    public static void refresh() {
-        if (refreshAction != null) {
-            refreshAction.run();
-        }
-    }
+
 }
