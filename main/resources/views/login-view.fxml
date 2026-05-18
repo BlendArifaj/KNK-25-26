@@ -4,27 +4,64 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500" prefWidth="400" style="-fx-background-color: #f4f6f8;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane prefHeight="500" prefWidth="400"
+            style="-fx-background-color: #f4f6f8;"
+            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.LoginController">
 
-    <VBox alignment="CENTER" spacing="18" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="60">
+    <!-- Language Switch Buttons -->
+    <HBox spacing="10"
+          alignment="TOP_RIGHT"
+          AnchorPane.topAnchor="15"
+          AnchorPane.rightAnchor="20">
+
+
+    </HBox>
+
+    <VBox alignment="CENTER"
+          spacing="18"
+          AnchorPane.leftAnchor="50"
+          AnchorPane.rightAnchor="50"
+          AnchorPane.topAnchor="60">
 
         <padding>
             <Insets bottom="30" left="25" right="25" top="30" />
         </padding>
 
-        <Label style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Login" />
+        <Label fx:id="titleLabel"
+               style="-fx-font-size: 32px; -fx-font-weight: bold;"
+               text="Login" />
 
-        <Label style="-fx-text-fill: #666; -fx-font-size: 14px;" text="Welcome back! Please sign in." />
+        <Label fx:id="subtitleLabel"
+               style="-fx-text-fill: #666; -fx-font-size: 14px;"
+               text="Welcome back! Please sign in." />
 
-        <TextField fx:id="usernameField" prefHeight="40" promptText="Username or email" />
+        <TextField fx:id="usernameField"
+                   prefHeight="40"
+                   promptText="Username or email" />
 
-        <PasswordField fx:id="passwordField" prefHeight="40" promptText="Password" />
+        <PasswordField fx:id="passwordField"
+                       prefHeight="40"
+                       promptText="Password" />
 
-        <Button fx:id="loginButton" onAction="#handleLogin" prefHeight="42" prefWidth="300" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 6;" text="Login" />
+        <Button fx:id="loginButton"
+                onAction="#handleLogin"
+                prefHeight="42"
+                prefWidth="300"
+                style="-fx-background-color: #2563eb;
+                       -fx-text-fill: white;
+                       -fx-font-size: 15px;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 6;"
+                text="Login" />
 
-        <Hyperlink onAction="#handleForgotPassword" text="Forgot password?" />
+        <Hyperlink fx:id="forgotPasswordLink"
+                   onAction="#handleForgotPassword"
+                   text="Forgot password?" />
 
-        <Label fx:id="messageLabel" style="-fx-text-fill: red;" />
+        <Label fx:id="messageLabel"
+               style="-fx-text-fill: red;" />
 
     </VBox>
 

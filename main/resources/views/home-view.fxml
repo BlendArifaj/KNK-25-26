@@ -23,7 +23,7 @@
             <Region HBox.hgrow="ALWAYS" />
 
             <Button style="-fx-background-color: white; -fx-text-fill: #1976d2;" text="Home" />
-            <Button onAction="#handleDoctorsClick" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Doctors" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Doctors" />
             <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Appointments" />
             <Button style="-fx-background-color: white; -fx-text-fill: #1976d2;" text="Login" />
         </HBox>
@@ -50,7 +50,7 @@
                     </font>
                 </Label>
 
-                <Button fx:id="bookAppointmentButton" prefHeight="45" prefWidth="200" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 8;" text="Book Appointment">
+                <Button fx:id="bookAppointmentButton" onAction="#handleBtnClick" prefHeight="45" prefWidth="200" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 8;" text="Book Appointment">
                     <font>
                         <Font size="15" />
                     </font>

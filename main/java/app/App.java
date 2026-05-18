@@ -9,14 +9,11 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(
-                getClass().getResource("/views/login-view.fxml")
-        );
-        Pane pane = fxmlLoader.load();
+        Router.setStage(stage);
 
-        Scene scene = new Scene(pane);
+        Router.navigateTo(ViewEnum.LOGIN_VIEW);
 
-        stage.setScene(scene);
+
         stage.show();
     }
 }

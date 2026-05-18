@@ -1,11 +1,15 @@
 package controllers;
 
+import app.Router;
+import app.ViewEnum;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import models.dto.LoginRequestDto;
 import models.dto.LoginResponseDto;
 import services.LoginService;
+
+import java.util.Locale;
 
 public class LoginController {
 
@@ -29,8 +33,10 @@ public class LoginController {
         LoginResponseDto response = this.loginService.login(loginDto);
 
 
-        if(response.isLogin()){
+        Router.navigateTo(ViewEnum.HOME_VIEW);
 
+        if(response.isLogin()){
+//            SessionManager.login(response.getUser());
         }
 //        logic ...
     }

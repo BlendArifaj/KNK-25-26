@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER"
+      spacing="25"
+      style="-fx-background-color: #f4f8fb;"
+      xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.CreateAppointmentController">
+
+    <padding>
+        <Insets top="45" right="50" bottom="45" left="50" />
+    </padding>
+
+    <!-- Title -->
+    <Label text="Create Appointment">
+        <font>
+            <Font size="34" />
+        </font>
+    </Label>
+
+    <Label text="Fill in the details below to book your doctor appointment."
+           style="-fx-text-fill: #555555;">
+        <font>
+            <Font size="16" />
+        </font>
+    </Label>
+
+    <!-- Appointment Form Card -->
+    <VBox prefWidth="620"
+          spacing="18"
+          style="-fx-background-color: white;
+                 -fx-background-radius: 12;
+                 -fx-padding: 30;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0, 0, 3);">
+
+        <Label text="Appointment Details">
+            <font>
+                <Font size="22" />
+            </font>
+        </Label>
+
+        <!-- Patient Name -->
+        <VBox spacing="8">
+            <Label text="Patient Name" />
+
+            <TextField fx:id="patientNameField"
+                       prefHeight="40"
+                       promptText="Enter patient name" />
+        </VBox>
+
+        <!-- Doctor -->
+        <VBox spacing="8">
+            <Label text="Doctor" />
+
+            <ComboBox fx:id="doctorComboBox"
+                      prefHeight="40"
+                      prefWidth="560"
+                      promptText="Select doctor" />
+        </VBox>
+
+        <!-- Specialty -->
+        <VBox spacing="8">
+            <Label text="Specialty" />
+
+            <ComboBox fx:id="specialtyComboBox"
+                      prefHeight="40"
+                      prefWidth="560"
+                      promptText="Select specialty" />
+        </VBox>
+
+        <!-- Date + Time -->
+        <HBox spacing="15">
+
+            <VBox spacing="8" HBox.hgrow="ALWAYS">
+                <Label text="Appointment Date" />
+
+                <DatePicker fx:id="appointmentDatePicker"
+                            prefHeight="40"
+                            prefWidth="270" />
+            </VBox>
+
+            <VBox spacing="8" HBox.hgrow="ALWAYS">
+                <Label text="Appointment Time" />
+
+                <ComboBox fx:id="appointmentTimeComboBox"
+                          prefHeight="40"
+                          prefWidth="270"
+                          promptText="Select time" />
+            </VBox>
+
+        </HBox>
+
+        <!-- Notes -->
+        <VBox spacing="8">
+            <Label text="Reason / Notes" />
+
+            <TextArea fx:id="reasonTextArea"
+                      prefHeight="90"
+                      wrapText="true"
+                      promptText="Describe the reason for your visit" />
+        </VBox>
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER_RIGHT" spacing="12">
+
+            <Button fx:id="cancelButton"
+                    prefHeight="40"
+                    prefWidth="110"
+                    style="-fx-background-color: #e3f2fd;
+                           -fx-text-fill: #1976d2;
+                           -fx-background-radius: 6;"
+                    text="Cancel" />
+
+            <Button fx:id="createAppointmentButton"
+                    prefHeight="40"
+                    prefWidth="180"
+                    style="-fx-background-color: #1976d2;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 6;"
+                    text="Create Appointment" />
+
+        </HBox>
+
+    </VBox>
+
+</VBox>
